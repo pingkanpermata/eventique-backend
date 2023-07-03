@@ -1,0 +1,3354 @@
+{
+	"info": {
+		"_postman_id": "8ea918ce-9903-4b88-bfc6-13bf97227c02",
+		"name": "Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24030722"
+	},
+	"item": [
+		{
+			"name": "ADMIN",
+			"item": [
+				{
+					"name": "USERS",
+					"item": [
+						{
+							"name": "GET ALL USERS",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Origin",
+										"value": "https://codepen.io",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/users?sort=id&sortBy=Desc&page=1&limit=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"users"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "id"
+										},
+										{
+											"key": "sortBy",
+											"value": "Desc"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET DETAIL USERS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/users/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE USER",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "adminkece1@mail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Admin123!",
+											"type": "text"
+										},
+										{
+											"key": "confirmPassword",
+											"value": "Admin123!",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/users/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE USER",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "admins@mail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Gunadi123!",
+											"type": "text"
+										},
+										{
+											"key": "confirmPassword",
+											"value": "Gunadi123!",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/users",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE USER",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/users/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PROFILES",
+					"item": [
+						{
+							"name": "GET ALL PROFILES",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Origin",
+										"value": "https://codepen.io",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/profiles?sort=id&sortBy=desc&page=1&limit=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"profiles"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "id"
+										},
+										{
+											"key": "sortBy",
+											"value": "desc"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET DETAIL PROFILE",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/profiles/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"profiles",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE PROFILE",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "userId",
+											"value": "6",
+											"type": "default"
+										},
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/C:/Users/gndsu/Downloads/Biru Gelap Minimalis Ucapan Peringatan Nuzulul Quran untuk Instagram Post Template.jpg"
+										},
+										{
+											"key": "fullName",
+											"value": "admins",
+											"type": "default"
+										},
+										{
+											"key": "gender",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "phoneNumber",
+											"value": "082122837371",
+											"type": "default"
+										},
+										{
+											"key": "profession",
+											"value": "admins",
+											"type": "default"
+										},
+										{
+											"key": "nationality",
+											"value": "indonesia",
+											"type": "default"
+										},
+										{
+											"key": "birthDate",
+											"value": "1992-12-13",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/profiles",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"profiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE PROFILE",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "userId",
+											"value": "4",
+											"type": "default"
+										},
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/C:/Users/gndsu/Downloads/@var.sportphotography-1445.jpg",
+											"disabled": true
+										},
+										{
+											"key": "fullName",
+											"value": "keren sekali",
+											"type": "default"
+										},
+										{
+											"key": "phoneNumber",
+											"value": "090988662",
+											"type": "default"
+										},
+										{
+											"key": "gender",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "profession",
+											"value": "manager",
+											"type": "default"
+										},
+										{
+											"key": "nationality",
+											"value": "korea",
+											"type": "default"
+										},
+										{
+											"key": "birthDate",
+											"value": "1990-10-11",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/profiles/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"profiles",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE PROFILE",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/profiles/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"profiles",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CATEGORIES",
+					"item": [
+						{
+							"name": "GET ALL CATEGORIES",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Origin",
+										"value": "https://codepen.io",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/categories?sort=id&sortBy=Desc&page=1&limit=10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "id"
+										},
+										{
+											"key": "sortBy",
+											"value": "Desc"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET DETAIL CATEGORIES",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/categories/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE CATEGORIES",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "festival",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/categories",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE CATEGORIES",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "abuy",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/categories/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE CATEGORIES",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/categories/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CITIES",
+					"item": [
+						{
+							"name": "GET ALL CITIES",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Origin",
+										"value": "https://codepen.io",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/cities?sort=id&sortBy=Desc&page=1&limit=7",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"cities"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "id"
+										},
+										{
+											"key": "sortBy",
+											"value": "Desc"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET DETAIL CITIES",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/cities/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"cities",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE CITIES",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/C:/Users/gndsu/Downloads/SEMARANG.jpg"
+										},
+										{
+											"key": "name",
+											"value": "semarang",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/cities",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"cities"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE CITIES",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/C:/Users/gndsu/Downloads/Biru Gelap Minimalis Ucapan Peringatan Nuzulul Quran untuk Instagram Post Template (1).jpg"
+										},
+										{
+											"key": "name",
+											"value": "kupang",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/cities/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"cities",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE CITIES",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/cities/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"cities",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "EVENTS",
+					"item": [
+						{
+							"name": "GET ALL EVENTS",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Origin",
+										"value": "https://codepen.io",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/events?sort=id&sortBy=Desc&page=1&limit=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"events"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "id"
+										},
+										{
+											"key": "sortBy",
+											"value": "Desc"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET DETAIL EVENTS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/events/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"events",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "11"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE EVENTS",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/C:/Users/gndsu/Downloads/ART.jpg"
+										},
+										{
+											"key": "title",
+											"value": "PAMERAN GAMBAR",
+											"type": "default"
+										},
+										{
+											"key": "date",
+											"value": "2023-09-09",
+											"type": "text"
+										},
+										{
+											"key": "cityId",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "descriptions",
+											"value": "PAMERKAN LUKISANMU",
+											"type": "text"
+										},
+										{
+											"key": "categoryId",
+											"value": "2",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/events",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"events"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE EVENTS",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/C:/Users/gndsu/Downloads/MUSIC.jpg",
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "DANGDUTAN BRO",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "date",
+											"value": "2023-09-09",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "cityId",
+											"value": "4",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "descriptions",
+											"value": "mantappp",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/events/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"events",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "11"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE EVENTS",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/events/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"events",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "EVENT CATEGORIES",
+					"item": [
+						{
+							"name": "GET ALL EVENT CATEGORIES",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Origin",
+										"value": "https://codepen.io",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/eventCategories?sort=id&sortBy=Desc&page=1&limit=10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"eventCategories"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "id"
+										},
+										{
+											"key": "sortBy",
+											"value": "Desc"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET DETAIL EVENT CATEGORIES",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/eventCategories/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"eventCategories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE EVENT CATEGORIES",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "eventId",
+											"value": "4",
+											"type": "default"
+										},
+										{
+											"key": "categoryId",
+											"value": "2",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/eventCategories",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"eventCategories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE EVENT CATEGORIES",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "eventId",
+											"value": "4",
+											"type": "default"
+										},
+										{
+											"key": "categoryId",
+											"value": "2",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/eventCategories/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"eventCategories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE EVENT CATEGORIES",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/eventCategories/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"eventCategories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PARTNERS",
+					"item": [
+						{
+							"name": "GET ALL PARTNERS",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Origin",
+										"value": "https://codepen.io",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/partners?sort=id&sortBy=Desc&page=1&limit=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"partners"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "id"
+										},
+										{
+											"key": "sortBy",
+											"value": "Desc"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET DETAIL PARTNERS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/partners/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"partners",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE PARTNERS",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/C:/Users/gndsu/Downloads/partner6.png"
+										},
+										{
+											"key": "name",
+											"value": "partner6",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/partners",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"partners"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE PARTNERS",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/C:/Users/gndsu/Downloads/Biru Gelap Minimalis Ucapan Peringatan Nuzulul Quran untuk Instagram Post Template.jpg"
+										},
+										{
+											"key": "name",
+											"value": "ituhy",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/partners/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"partners",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE PARTNERS",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/partners/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"partners",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "RESERVATION SECTIONS",
+					"item": [
+						{
+							"name": "GET ALL RESERVATION SECTIONS",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Origin",
+										"value": "https://codepen.io",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/reservationSections?sort=id&sortBy=Desc&page=1&limit=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservationSections"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "id"
+										},
+										{
+											"key": "sortBy",
+											"value": "Desc"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET DETAIL RESERVATION SECTIONS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/reservationSections/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservationSections",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE RESERVATION SECTIONS",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "sultan",
+											"type": "default"
+										},
+										{
+											"key": "price",
+											"value": "30000",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/reservationSections",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservationSections"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE RESERVATION SECTIONS",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "high class",
+											"type": "default"
+										},
+										{
+											"key": "price",
+											"value": "50000",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/reservationSections/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservationSections",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE RESERVATION SECTIONS",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/reservationSections/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservationSections",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "RESERVATION STATUS",
+					"item": [
+						{
+							"name": "GET ALL RESERVATION STATUS",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Origin",
+										"value": "https://codepen.io",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/reservationStatus?sort=id&sortBy=Desc&page=1&limit=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservationStatus"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "id"
+										},
+										{
+											"key": "sortBy",
+											"value": "Desc"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET DETAIL RESERVATION STATUS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/reservationStatus/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservationStatus",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE RESERVATION STATUS",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Not Payed",
+											"type": "default"
+										},
+										{
+											"key": "price",
+											"value": "10000",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/reservationStatus",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservationStatus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE RESERVATION STATUS",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Booking",
+											"type": "default"
+										},
+										{
+											"key": "price",
+											"value": "50000",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/reservationStatus/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservationStatus",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE RESERVATION STATUS",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/reservationStatus/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservationStatus",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PAYMENT METHODS",
+					"item": [
+						{
+							"name": "GET ALL PAYMENT METHODS",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Origin",
+										"value": "https://codepen.io",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/paymentMethods?sort=id&sortBy=Desc&page=1&limit=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"paymentMethods"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "id"
+										},
+										{
+											"key": "sortBy",
+											"value": "Desc"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET DETAIL PAYMENT METHODS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/paymentMethods/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"paymentMethods",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE PAYMENT METHODS",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "CCR",
+											"type": "default"
+										},
+										{
+											"key": "price",
+											"value": "10000",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/paymentMethods",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"paymentMethods"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE PAYMENT METHODS",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "BANK TRANSFER",
+											"type": "default"
+										},
+										{
+											"key": "price",
+											"value": "50000",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/paymentMethods/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"paymentMethods",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE PAYMENT METHODS",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/paymentMethods/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"paymentMethods",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "RESERVATIONS",
+					"item": [
+						{
+							"name": "GET ALL RESERVATIONS",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Origin",
+										"value": "https://codepen.io",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/reservations?sort=id&sortBy=asc&page=1&limit=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservations"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "id"
+										},
+										{
+											"key": "sortBy",
+											"value": "asc"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET DETAIL RESERVATIONS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/reservations/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservations",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE RESERVATIONS",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "eventId",
+											"value": "2",
+											"type": "default"
+										},
+										{
+											"key": "userId",
+											"value": "2",
+											"type": "default"
+										},
+										{
+											"key": "statusId",
+											"value": "2",
+											"type": "default"
+										},
+										{
+											"key": "paymentMethodId",
+											"value": "2",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/reservations",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE RESERVATIONS",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "eventId",
+											"value": "4",
+											"type": "default"
+										},
+										{
+											"key": "userId",
+											"value": "4",
+											"type": "default"
+										},
+										{
+											"key": "statusId",
+											"value": "4",
+											"type": "default"
+										},
+										{
+											"key": "paymentMethodId",
+											"value": "4",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/reservations/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservations",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE RESERVATIONS",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/reservations/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservations",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "RESERVATION TICKETS",
+					"item": [
+						{
+							"name": "GET ALL RESERVATION TICKETS",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Origin",
+										"value": "https://codepen.io",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/reservationTickets?sort=id&sortBy=Desc&page=2&limit=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservationTickets"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "id"
+										},
+										{
+											"key": "sortBy",
+											"value": "Desc"
+										},
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET DETAIL RESERVATION TICKETS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/reservationTickets/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservationTickets",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE RESERVATION TICKETS",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "reservationId",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "sectionId",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "quantity",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "paymentMethodId",
+											"value": "2",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/reservationTickets",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservationTickets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE RESERVATION TICKETS",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "reservationId",
+											"value": "4",
+											"type": "default"
+										},
+										{
+											"key": "sectionId",
+											"value": "4",
+											"type": "default"
+										},
+										{
+											"key": "quantity",
+											"value": "4",
+											"type": "default"
+										},
+										{
+											"key": "paymentMethodId",
+											"value": "4",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/reservationTickets/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservationTickets",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE RESERVATION TICKETS",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/reservationTickets/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"reservationTickets",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "WISHLISTS",
+					"item": [
+						{
+							"name": "GET ALL WISHLISTS",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Origin",
+										"value": "https://codepen.io",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/admin/wishlists?sort=id&sortBy=desc&page=1&limit=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"wishlists"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "id"
+										},
+										{
+											"key": "sortBy",
+											"value": "desc"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET DETAIL WISHLISTS",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/wishlists/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"wishlists",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE WISHLISTS",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "eventId",
+											"value": "4",
+											"type": "default"
+										},
+										{
+											"key": "userId",
+											"value": "4",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/wishlists",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"wishlists"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE WISHLISTS",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "eventId",
+											"value": "2",
+											"type": "default"
+										},
+										{
+											"key": "userId",
+											"value": "4",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/wishlists/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"wishlists",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE WISHLISTS",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/wishlists/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"wishlists",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "gendhis@mail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "Gendhis123@",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "fullName",
+									"value": "gendhis",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "gendhis2@mail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "Gendhis123@",
+									"type": "default"
+								},
+								{
+									"key": "confirmPassword",
+									"value": "Gendhis123@",
+									"type": "default"
+								},
+								{
+									"key": "termAndCondition",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FORGOT PASSWORD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "gunadi@mail.com",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/forgotPassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"forgotPassword"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RESET PASSWORD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "code",
+									"value": "514790",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "user2@mail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "User123#",
+									"type": "default"
+								},
+								{
+									"key": "confirmPassword",
+									"value": "User123#",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/resetPassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"resetPassword"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PROFILE",
+			"item": [
+				{
+					"name": "GET PROFILE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT PROFILE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fullName",
+									"value": "gunadi pratama s",
+									"type": "default"
+								},
+								{
+									"key": "picture",
+									"type": "file",
+									"src": "/C:/Users/gndsu/Downloads/profile2.jpg"
+								},
+								{
+									"key": "email",
+									"value": "gunadi@mail.com",
+									"type": "default"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "08978787878",
+									"type": "default"
+								},
+								{
+									"key": "gender",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "profession",
+									"value": "programmer",
+									"type": "default"
+								},
+								{
+									"key": "nationality",
+									"value": "indonesia",
+									"type": "default"
+								},
+								{
+									"key": "birthDate",
+									"value": "1992-10-10",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CATEGORY",
+			"item": [
+				{
+					"name": "GET CATEGORY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CITY",
+			"item": [
+				{
+					"name": "GET CITY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/city",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"city"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL CITY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/city/all-cities?page=1&limit=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"city",
+								"all-cities"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PARTNER",
+			"item": [
+				{
+					"name": "GET PARTNER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/partner",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"partner"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CHANGE PASSWORD",
+			"item": [
+				{
+					"name": "CHANGE PASSWORD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "oldPassword",
+									"value": "User123#",
+									"type": "default"
+								},
+								{
+									"key": "newPassword",
+									"value": "User123!",
+									"type": "default"
+								},
+								{
+									"key": "confirmPassword",
+									"value": "User123!",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/change-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WISHLIST",
+			"item": [
+				{
+					"name": "GET WISHLIST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/wishlist",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MANAGE WISHLIST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "eventId",
+									"value": "2",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/wishlist",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EVENT",
+			"item": [
+				{
+					"name": "MANAGE EVENT",
+					"item": [
+						{
+							"name": "GET EVENT MANAGE",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/event/manage",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"event",
+										"manage"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET DETAI EVENT MANAGE",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/event/manage/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"event",
+										"manage",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE EVENT",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/C:/Users/gndsu/Downloads/SPORTS.png"
+										},
+										{
+											"key": "title",
+											"value": "tarkam nusantara",
+											"type": "default"
+										},
+										{
+											"key": "date",
+											"value": "2023-10-11",
+											"type": "default"
+										},
+										{
+											"key": "cityId",
+											"value": "2",
+											"type": "default"
+										},
+										{
+											"key": "descriptions",
+											"value": "sepakbola tarkam modern",
+											"type": "default"
+										},
+										{
+											"key": "categoryId",
+											"value": "5",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/event/manage",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"event",
+										"manage"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE EVENT",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/C:/Users/gndsu/Downloads/ART.jpg"
+										},
+										{
+											"key": "title",
+											"value": "our art event",
+											"type": "default"
+										},
+										{
+											"key": "date",
+											"value": "1990-10-10",
+											"type": "default"
+										},
+										{
+											"key": "cityId",
+											"value": "3",
+											"type": "default"
+										},
+										{
+											"key": "descriptions",
+											"value": "keren sekali",
+											"type": "default"
+										},
+										{
+											"key": "categoryId",
+											"value": "1",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/event/manage/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"event",
+										"manage",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "13"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE EVENT",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/event/manage/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"event",
+										"manage",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GET EVENT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/event?searchName=&searchCategory=&searchLocation=&page=1&limit=10&sort=id&sortBy=asc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"event"
+							],
+							"query": [
+								{
+									"key": "searchName",
+									"value": ""
+								},
+								{
+									"key": "searchCategory",
+									"value": ""
+								},
+								{
+									"key": "searchLocation",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "id"
+								},
+								{
+									"key": "sortBy",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DETAIL EVENT",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url}}/event/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"event",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RESERVATIONS",
+			"item": [
+				{
+					"name": "CREATE RESERVATION",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "eventId",
+									"value": "2",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/reservation",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE RESERVATION TICKET",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reservationId",
+									"value": "3",
+									"type": "default"
+								},
+								{
+									"key": "sectionId",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "quantity",
+									"value": "5",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/reservation/ticket",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"reservation",
+								"ticket"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PAYMENT",
+			"item": [
+				{
+					"name": "MAKE PAYMENT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reservationId",
+									"value": "3",
+									"type": "default"
+								},
+								{
+									"key": "paymentMethodId",
+									"value": "2",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/payment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HISTORY",
+			"item": [
+				{
+					"name": "GET HISTORY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/history",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET HISTORY DETAIL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/history/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"history",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test Connection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5555",
+			"type": "string"
+		}
+	]
+}
