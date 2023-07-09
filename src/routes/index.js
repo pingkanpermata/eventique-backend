@@ -21,6 +21,7 @@ router.use("/event", require("./event.route"))
 router.use("/reservation", authMiddleware, require("./reservation.route"))
 router.use("/payment", authMiddleware, require("./payment.route"))
 router.use("/history", authMiddleware, require("./history.route"))
+router.use("/device-token", authMiddleware, require("./deviceToken.route"))
 
 router.use("*", (request, response)=>{
     return response.status(404).json({
