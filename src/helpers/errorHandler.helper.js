@@ -54,7 +54,7 @@ const errorHandler = (response, err) => {
     if(err?.message?.includes("code_invalid")){
         return response.status(409).json({
             success: false,
-            message: "Code invalid, pelase insert the newest code or request again!",
+            message: "Code invalid, please insert the newest code or request again!",
         })
     }
     if(err?.message?.includes("payment_method_not_found")){

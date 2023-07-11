@@ -107,6 +107,7 @@ CREATE TABLE "forgotRequest" (
     "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "email" VARCHAR(255),
     "code" VARCHAR(255),
+    "statusCode" BOOLEAN,
     "createdAt" TIMESTAMP DEFAULT NOW(),
     "updatedAt" TIMESTAMP DEFAULT NULL
 );

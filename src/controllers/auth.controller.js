@@ -111,7 +111,7 @@ exports.resetPassword = async (request, response) => {
             throw Error("code_invalid")
         }
 
-        if(find.statusCode !== 1){
+        if(find.statusCode !== true){
             throw Error("code_invalid")
         }
 
