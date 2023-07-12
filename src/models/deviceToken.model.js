@@ -16,6 +16,26 @@ exports.findAll = async(page, limit, sort, sortBy) => {
     return rows
 }
 
+exports.findOneByToken = async (token) => {
+    const query = `
+  SELECT * FROM "${table}"
+  WHERE token = $1
+  `
+    const values = [token]
+    const {rows} = await db.query(query, values)
+    return rows[0]
+}
+
+exports.updateUserByToken = async (token, id) => {
+    const query = `
+  UPDATE "${table}"
+  SET userId = $2
+  WHERE token = $1
+  `
+    const values = [token, id]
+    const {rows} = await db.query(query, values)
+    return rows[0]
+}
 
 exports.insertToken = async function(id, data){
     const query = `
