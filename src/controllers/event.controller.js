@@ -4,6 +4,8 @@ const citiesModel = require("../models/cities.model")
 const categoriesModel = require("../models/categories.model")
 const eventCategoriesModel = require("../models/eventCategories.model")
 const fileRemover = require("../helpers/fileRemover.helper")
+const deviceTokenModel = require("../models/deviceToken.model")
+const admin = require("../helpers/firebase")
 
 // const fs = require("fs")
 const cloudinary = require("cloudinary").v2
@@ -107,6 +109,16 @@ exports.createOurEvent = async (request, response) => {
         // return console.log(request.file)
         const event = await eventsModel.insert(data)
 
+        const listToken = await deviceTokenModel.findAll(1, 1000)
+        const message = listToken.map(item => ({
+            token: item.token, 
+            notification: {
+                title: "There is new event !", 
+                body: `${request.body.title} will be held at ${request.body.date}, check it out !`
+            }}))
+        const messaging = admin.messaging()
+        messaging.sendEach(message)
+        
         const eventCategoriesData = {
             eventId: event.id,
             categoryId: data.categoryId
