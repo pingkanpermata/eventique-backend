@@ -57,7 +57,7 @@ exports.createEvent = async(request, response) => {
         
         const data = {
             ...request.body,
-            createdBy: id
+            // createdBy: id
         }
 
         if(data.cityId){
@@ -86,7 +86,7 @@ exports.createEvent = async(request, response) => {
 
         const results = {
             ...event,
-            createdBy: createdUser?.fullName
+            // createdBy: createdUser?.fullName
         }
         
         await eventCategoryModel.insert(eventCategoriesData)

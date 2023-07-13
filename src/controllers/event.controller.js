@@ -84,7 +84,7 @@ exports.createOurEvent = async (request, response) => {
 
         const data = {
             ...request.body,
-            createdBy: id
+            // createdBy: id
         }
 
         if(data.cityId){
@@ -150,13 +150,13 @@ exports.updateOurEvent = async (request, response) => {
             throw Error("data_not_found")
         }
 
-        if(id !== checkEvent.createdBy){
-            throw Error("data_event_not_created_by_you")
-        }
+        // if(id !== checkEvent.createdBy){
+        //     throw Error("data_event_not_created_by_you")
+        // }
 
         const data = {
             ...request.body,
-            createdBy: id
+            // createdBy: id
         }
 
       
@@ -222,9 +222,9 @@ exports.deleteEvent = async (request, response) => {
             throw Error("data_not_found")
         }
 
-        if(id !== findUser.createdBy){
-            throw Error("data_event_not_created_by_you")
-        }
+        // if(id !== findUser.createdBy){
+        //     throw Error("data_event_not_created_by_you")
+        // }
         
 
         const filePict = findUser.picture

@@ -94,22 +94,22 @@ exports.findDetailEvent = async(id) => {
     return rows[0]
 }
 
-exports.findEventByUserCreated = async(id) => {
-    const queries = `
-    SELECT
-    "e"."id",
-    "e"."title",
-    "c"."name" AS "location",
-    "e"."date",
-    "e"."descriptions"
-    FROM "events" "e"
-    JOIN "cities" "c" ON "c"."id" = "e"."cityId"
-    WHERE "e"."createdBy" = $1
-    `  
-    const values = [id]
-    const {rows} = await db.query(queries,values)  
-    return rows
-}
+// exports.findEventByUserCreated = async(id) => {
+//     const queries = `
+//     SELECT
+//     "e"."id",
+//     "e"."title",
+//     "c"."name" AS "location",
+//     "e"."date",
+//     "e"."descriptions"
+//     FROM "events" "e"
+//     JOIN "cities" "c" ON "c"."id" = "e"."cityId"
+//     WHERE "e"."createdBy" = $1
+//     `  
+//     const values = [id]
+//     const {rows} = await db.query(queries,values)  
+//     return rows
+// }
 
 exports.findPict = async(id) => {
     const queries = `
@@ -129,7 +129,6 @@ exports.insert = async(data)=>{
       "date",
       "cityId",
       "descriptions",
-      "createdBy"
       )
     VALUES ($1, $2, $3, $4, $5, $6) RETURNING *
     `
@@ -138,8 +137,7 @@ exports.insert = async(data)=>{
         data.title,
         data.date,
         data.cityId,
-        data.descriptions,
-        data.createdBy
+        data.descriptions
     ]
     const {rows} = await db.query(queries, values)
     return rows[0]
@@ -152,8 +150,7 @@ exports.update = async(id, data)=>{
     "title"=COALESCE(NULLIF($3,''), "title"),
     "date"=COALESCE(NULLIF($4::DATE, NULL), "date"),
     "cityId"=COALESCE(NULLIF($5::INTEGER, NULL), "cityId"),
-    "descriptions"=COALESCE(NULLIF($6,''), "descriptions"),
-    "createdBy"=COALESCE(NULLIF($7::INTEGER, NULL), "createdBy")
+    "descriptions"=COALESCE(NULLIF($6,''), "descriptions")
     WHERE "id"=$1
     RETURNING *
     `
@@ -163,8 +160,7 @@ exports.update = async(id, data)=>{
         data.title,
         data.date,
         data.cityId,
-        data.descriptions,
-        data.createdBy
+        data.descriptions
     ]
 
     const {rows} = await db.query(queries, values)
