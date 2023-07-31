@@ -3,7 +3,7 @@ const fileRemover = require("../helpers/fileRemover.helper")
 
 // const errorHandler = require("../helpers/errorHandler.helper")
 
-const requiireTermAndCondition = body("termAndCondition").trim().isBoolean(true).withMessage("Incorect Term and Condition!")
+const requireTermAndCondition = body("termAndCondition").trim().isBoolean(true).withMessage("Incorect Term and Condition!")
 
 const validParameter = param("id").isNumeric().withMessage("Please insert valid number!").toInt().isDecimal().withMessage("Parameter ID Invalid!").isInt({min: 1}).withMessage("No data ID found!")
 const validQueryPage = query("page").optional().isInt({min: 1}).withMessage("Parameter Page must be int format!")
@@ -79,7 +79,7 @@ const rules = {
         requireEmail,  requirePassword
     ],
     authRegister:[
-        requireFullName, requireEmail, requirePassword, requireStrongPassword, requireConfirmPassword, requiireTermAndCondition
+        requireFullName, requireEmail, requirePassword, requireStrongPassword, requireConfirmPassword, requireTermAndCondition
     ],
     createUser:[
         requireEmail, requirePassword, requireStrongPassword, requireConfirmPassword
