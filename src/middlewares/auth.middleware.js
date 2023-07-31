@@ -6,7 +6,7 @@ const authMiddleware = (request, response, next) => {
 
     try {
         const {authorization: auth} = request.headers
-        if(!auth && !auth?.startsWith("Bearer ")){
+        if(!auth && !auth?.startsWith("Bearer")){
             throw Error("unauthorized")
         }
 
